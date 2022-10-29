@@ -1,0 +1,37 @@
+@model UserInfoViewModel
+@{
+    ViewData["Title"] = "Information";
+}
+
+<div class="info-container">
+    <div class="info-user-container">
+        <div class="user-information">
+            <div class="user-picture-container">
+                <img draggable="false" class="user-picture" src="~/img/astronauta-profile.png" 
+                alt="user-picture"/>
+            </div>   
+            <ul class="user-data-list">
+                <li>Username: @Model.User.UserName</li>
+                <li>Email: @Model.User.Email</li>
+                <li>Joined on: @Model.User.CreationTime</li>
+            </ul>
+        </div>
+        <div class="user-posts">
+            <div class="posts-user-container">
+                <h1 class="post-user-header">User posts <span class="posts-number">@Model.UserPosts.Count()</span></h1>
+            </div>
+            <ul class="user-posts-list">
+                @foreach(Post post in Model.UserPosts) {
+                    <li>
+                        <a asp-action="PostInfo" asp-controller="Home" asp-route-id="@post.PostID" class="post-direction" target="blank">@post.Title</a>
+                        <span class="post-category">@post.Category.Name</span>
+                        <p class="post-url-description">@post.Description.TrimDescription()</p>
+                        <div class="comments-number-container">
+                            <i class="fas fa-comment"></i><span class="comments-in-post">@post.Comments.Count()</span>
+                        </div>
+                    </li>
+                }
+            </ul>
+        </div>
+    </div>
+</div>

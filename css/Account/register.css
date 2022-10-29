@@ -1,0 +1,57 @@
+.register-img {
+    position: relative;
+    background-image: url(/img/astronaut.jpg);
+    background-size: 100% 100%;
+    
+}
+
+.register-img::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(36, 36, 68, 0.7), rgba(15, 12, 41, 0.7));
+}
+
+.register-tologin {
+    text-decoration: none;
+    color: var(--links-color);
+    font-size: 19px;
+    font-weight: 900;
+    margin-left: 3px;
+}
+
+.register-tologin:hover {color: var(--links-color); }
+
+.whytosignup {
+    margin: 30px 0px;
+    color: white;
+    font-size: 34px;
+    position: relative;
+    z-index: 10;
+    font-weight: 900;
+    text-align: center;
+}
+
+.reasonstosignup {
+    color: white;
+    font-size: 17px;
+    list-style-type: none;
+    position: relative;
+    z-index: 10;
+    text-align: justify;
+    font-weight: 300;
+}
+
+.reasonstosignup li {margin: 0 20px 10px 0;}
+
+.reasonstosignup li::before {
+    content: '👨‍🚀';
+    margin-right: 14px;
+}
+
+.normalpass-field, .confirmpass-field{cursor: pointer;}
+

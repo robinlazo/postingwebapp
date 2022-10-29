@@ -1,0 +1,70 @@
+.publish-container {
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--secondary-night-bgcolor);
+}
+
+.publish-form {
+    width: 37%;
+    height: 80%;
+    background-color: var(--main-night-bgcolor);
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 0px 0px 5px rgba(255, 255, 255, 0.15), 0px 0px 0px 10px rgba(255, 255, 255, 0.1);
+}
+
+.publish-label {
+    color: var(--secondary-night-bgcolor);
+    font-size: 22px;
+    font-weight: 700;
+    display: block;
+    margin: 5px 0px 10px 0px;
+}
+
+.publish-button {
+    width: 100%;
+    background-color: var(--secondary-night-bgcolor);
+    border-radius: 8px;
+    border: none;
+    color: var(--main-night-bgcolor);
+    font-weight: 700;
+    padding: 6px 0px;
+}
+
+.title-input {
+    width: 100%;
+    outline: none;
+    background-color: var(--secondary-night-bgcolor);
+    color: var(--main-night-bgcolor);
+    border: none;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.title-input::-webkit-input-placeholder { color: var(--main-night-bgcolor) }
+
+.description-textarea {
+    background-color: var(--secondary-night-bgcolor);
+    width: 100%;
+    outline: none;
+    padding: 10px;
+    resize: none;
+    border: none;
+    border-radius: 4px;
+    color: var(--main-night-bgcolor);
+}
+
+.description-textarea::-webkit-input-placeholder { color: var(--main-night-bgcolor); }
+
+.category-field {
+    background-color: var(--secondary-night-bgcolor);
+    width: 100%;
+    text-align: center;
+    margin-bottom: 70px;
+    color: var(--main-night-bgcolor);
+    padding: 8px;
+    border: none;
+    outline: none;
+}

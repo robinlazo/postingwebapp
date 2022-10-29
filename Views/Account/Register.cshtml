@@ -1,0 +1,63 @@
+@model RegisterUserDTO 
+@{
+    ViewData["Title"] = "Register";
+}
+
+@section scripts {
+    <script src="~/js/global.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+}
+
+<div class="form-container">
+    <div class="register-img">
+        <h2 class="whytosignup">Why Sign Up?</h2>
+        <ul class="reasonstosignup">
+            <li>You can make posts</li>
+            <li>You can make comments on each post</li>
+            <li>You will enjoy reading about interesting topics like soccer, mma, food, nature, philosophy and others!</li>
+        </ul>
+    </div>
+    <div class="input-list-form">
+        <div asp-validation-summary="ModelOnly"></div>
+        <h2 class="form-header">Sign Up</h2>
+        <p>Existing User? <a class="register-tologin" asp-action="LogIn">Log In</a></p>
+
+        <form method="post" asp-action="Register">
+
+            <label for="username" class="input-label">USERNAME</label>
+            <span asp-validation-for="Username"></span>
+            <div class="input-field">
+                <i class="fas fa-user"></i>
+                <input id="username" class="custom-input" asp-for="Username" placeholder="Type your Username"/>
+            </div>
+
+            <label for="email" class="input-label">EMAIL</label> 
+            <span asp-validation-for="Email"></span>
+            <div class="input-field">
+                <i class="fas fa-envelope"></i>
+                <input id="email" class="custom-input" asp-for="Email" placeholder="Type your Email"/>
+            </div>
+
+            <label for="password" class="input-label">PASSWORD</label>
+            <span asp-validation-for="Password"></span>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input id="password" class="custom-input" asp-for="Password" placeholder="Type your Password"/>
+                <i class="fas fa-eye normalpass-field" data-ispassvisible="false"></i>
+            </div>
+
+            <label for="confirm" class="input-label">CONFIRM PASSWORD</label>
+             <span asp-validation-for="ConfirmPassword"></span>
+            <div class="input-field">
+                <i class="fas fa-lock"></i>
+                <input id="confirm" class="custom-input" asp-for="ConfirmPassword" placeholder="Confirm your Password"/>
+                <i class="fas fa-eye confirmpass-field" data-ispassvisible="false"></i>
+            </div>
+           
+            <button type="submit" class="form-button">Register</button>       
+
+        </form>
+    </div>
+</div>

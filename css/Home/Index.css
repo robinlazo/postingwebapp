@@ -1,0 +1,151 @@
+.index-container {
+    background-color: var(--secondary-night-bgcolor);
+    min-height: 100vh;
+    display: flex;
+}
+
+.categories {
+    background-color: white;
+    padding: 0px 8px;
+}
+
+.category-header {
+    padding: 10px 20px;
+    font-size: 26px;
+    font-weight: 500;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+}
+
+.filter-by-category {
+    padding: 0;
+    list-style-type: none;
+}
+
+.filter-by-category li {
+    font-weight: 900;
+    padding: 8px;
+    font-size: 20px;
+    border-radius: 4px;
+    margin-bottom: 8px;
+}
+
+.filter-by-category li:hover {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+.filter-by-category li a {
+    text-decoration: none;
+    color: var(--secondary-night-bgcolor);
+}
+
+.icon-category {
+    margin-right: 5px;
+}
+
+.posts-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.post-direction-index {
+    text-decoration: none;
+    font-weight: 900;
+    font-size: 19px;
+    color: var(--secondary-night-bgcolor);
+}
+
+.post-direction-index:hover {color: var(--secondary-night-bgcolor);}
+
+.post-category-index {
+    display: inline-block;
+    background-color: white;
+    padding: 2px 5px;
+    color: var(--secondary-night-bgcolor);
+    font-weight: 500;
+    border-radius: 5px;
+}
+
+.newpost-container {
+    width: 99%;
+    background-color: var(--main-night-bgcolor);
+    margin: 2px 0px 10px 0px;
+    display: flex;
+    border-radius: 4px;
+    align-items: center;
+}
+
+.newpost-header {
+    flex: 1;
+    color: white;
+    font-weight: 500;
+    font-size: 24px;
+    text-align: center;
+}
+
+.newpost-header-span {
+    color: var(--secondary-night-bgcolor);
+    font-weight: 700;
+    font-size: 30px;
+    text-decoration: underline;
+}
+
+.makeapost-redirection {
+    text-decoration: none;
+    border-left: 1px solid rgba(255, 255, 255, 0.9);
+    color: white;
+    font-weight: 700;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0px 5px;
+}
+
+.makeapost-redirection:hover {
+    background-color: white;
+    color: var(--secondary-night-bgcolor);
+}
+
+.index-posts-list {
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding: 0;
+}
+
+.index-posts-list li {
+    background-color: var(--main-night-bgcolor);
+    margin-bottom: 10px;
+    width: 80%;
+    padding: 8px 40px;
+    border-radius: 10px;
+}
+
+.comments-number-container-index {
+    color: var(--secondary-night-bgcolor);
+}
+
+.post-information {
+    display: flex;
+    justify-content: space-between;
+}
+
+.post-information-container {
+    color: var(--secondary-night-bgcolor);
+    font-weight: 600;
+}
+
+.astronaut-post-icon {
+    margin-right: 5px;
+}
+
+.time-tag-post {
+    background-color: var(--secondary-night-bgcolor);
+    color: var(--main-night-bgcolor);
+    border-radius: 8px;
+    margin-left: 10px;
+    padding: 2px 4px;
+    font-weight: 800;
+}

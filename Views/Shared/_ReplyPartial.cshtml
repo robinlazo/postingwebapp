@@ -1,0 +1,6 @@
+@model ReplyDTO
+<form asp-controller="Home" asp-action="Reply" method="post">
+    <input asp-for="Content" placeholder="Start a reply" class="reply-input"/>
+    <input type="hidden" asp-for="CommentID">
+    <button class="reply-input-button">Reply</button>
+</form>

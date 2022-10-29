@@ -1,0 +1,68 @@
+.navbar {
+    background-color: var(--main-night-bgcolor);
+    list-style-type: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+
+.navbar-logo {
+   text-decoration: none;
+   color: var(--secondary-night-bgcolor);
+   display: flex;
+   align-items: center;
+   font-size: 30px;
+   font-weight: 900;
+}
+
+.navbar-logo::before {
+    content: '';
+    display: inline-block;
+    margin-left: 20px;
+    background-image: url(/img/header.png);
+    transform: rotate(90deg);
+    transition: all 1.5s ease;
+    height: 40px;
+    width: 50px;
+    background-size: 100% 100%;
+}
+
+.navbar-logo:hover::before {transform: rotate(360deg);}
+
+.navbar-logo:hover {color: var(--secondary-night-bgcolor);}
+
+
+.navbar-buttons {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+.navbar-buttons li {
+    list-style-type: none;
+    margin-right: 20px;
+}
+
+.navbar-buttons li a {
+    text-decoration: none;
+    color: var(--secondary-night-bgcolor);
+    padding: 4px 9px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 16px;
+    background-color: white;
+    box-shadow: 2px 1px 0px 4px var(--secondary-night-bgcolor);
+}
+
+
+.logout-button {
+   background-color: var(--secondary-night-bgcolor);
+   border: 2px solid white;
+   font-weight: 500;
+   padding: 0px 7px;
+   font-size: 19px;
+   color: #ffffff;
+   text-decoration:dotted;
+   box-shadow: 4px 4px 0px rgba(255, 255, 255, 0.7), -4px -4px 0px rgba(255, 255, 255, 0.7);
+}

@@ -1,0 +1,6 @@
+@model CommentDTO
+<form asp-controller="Home" asp-action="Comment" class="makingcomment-container" method="post">
+    <input asp-for="Content" placeholder="Make a comment about the post" class="makecomment-input"/>
+    <input type="hidden" asp-for="PostID" />
+    <button type="submit" class="submit-comment">Comment</button>
+</form>

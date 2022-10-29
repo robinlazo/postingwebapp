@@ -1,0 +1,112 @@
+.info-container {
+    background-color: var(--secondary-night-bgcolor);
+    height: 95vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.info-user-container {
+    background-color: var(--main-night-bgcolor);
+    border: 2px solid white;
+    height: 85%;
+    width: 90%;
+    border-radius: 3px;
+    display: flex;
+}
+
+.info-user-container > * {
+    flex: 1;
+}
+
+.user-picture-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 3px solid whitesmoke;
+}
+.user-picture {
+    border: 4px solid white;
+    background-color: black;
+    border-radius: 50%;
+    box-shadow: 0px 0px 3px 1px var(--secondary-night-bgcolor), 
+    0px 0px 5px 2px var(--secondary-night-bgcolor), 0px 0px 7px 3px var(--secondary-night-bgcolor);
+    user-select: none;
+}
+
+.user-information {
+    display: flex;
+    flex-direction: column;
+}
+.user-information > * {
+    flex: 1;
+}
+
+.user-data-list {
+    color: var(--main-night-bgcolor);
+    display: flex;
+    padding: 0;
+    flex-direction: column;
+}
+
+.user-data-list li {
+    list-style-type: none;
+    font-weight: 900;
+    flex: 1;
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--secondary-night-bgcolor);
+    border-bottom: 1px solid white;
+}
+
+.user-posts {
+    background-color: white;
+    overflow-y: auto;
+}
+
+.posts-user-container {
+    background-color: var(--secondary-night-bgcolor);
+    text-align: center;
+    margin: auto;
+    padding: 10px 0px;
+    width: 80%;
+    border-radius: 5px;
+    margin-top: 10px;
+    border: 3px solid var(--main-night-bgcolor);
+}
+
+.post-user-header {
+    font-size: 24px;
+    color: var(--links-color);
+    font-weight: 900;
+}
+
+.posts-number {
+    background-color: var(--main-night-bgcolor);
+    color: var(--secondary-night-bgcolor);
+    display: inline-block;
+    padding: 0px 5px;
+}
+
+.user-posts-list {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+}
+
+.user-posts-list li {
+    width: 90%;
+    background-color: var(--secondary-night-bgcolor);
+    margin: 10px 0px;
+    padding: 10px;
+    box-sizing: border-box;
+    border-radius: 7px;
+    border: 3px solid var(--main-night-bgcolor);
+}
+
+

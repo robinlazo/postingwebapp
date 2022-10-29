@@ -1,0 +1,52 @@
+@model PostViewModel
+@{
+    ViewData["Title"] = "Description";
+}
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+    <script src="~/js/global.js" asp-append-version="true"></script>
+}
+
+<div class="post-background">
+    <div class="post-main-container">
+        <div class="post-content-container">
+            <h2>@Model.Post.Title</h2>
+            <p>@Model.Post.Description</p>
+            <i class="fas fa-user-astronaut post-user-creator-icon"></i>
+            <a class="post-user-creator" asp-controller="Account" asp-action="Info" asp-route-id="@Model.Post.UserID">@Model.Post.User.UserName</a>
+        </div>
+        <partial model="@Model.CommentDTO" name="_CommentPartial"></partial>
+        <div class="post-comments-container">
+            @if(Model.Post.Comments.Count() > 0) {
+                @foreach(Comment comment in Model.Post.Comments) {
+                    <div class="post-comment">
+                        <a class="username-comment" asp-controller="Account" asp-action="Info" asp-route-id="@comment.UserID">@comment.User.UserName</a>
+                        <div class="comment-content">
+                            <p>@comment.Content</p> 
+                            <div class="comment-replies">
+                                <span class="reply-button" data-reply-id="#rly-@comment.CommentID">Reply&nbsp;<i class="fas fa-caret-down"></i></span>
+                                <div class="replies-container reply-hidden" id="rly-@comment.CommentID">
+                                    <ul class="replies">
+                                        @foreach(Reply reply in comment.Replies) {
+                                            <li>
+                                                <a class="reply-name" asp-controller="Account" asp-action="Info" asp-route-id="@reply.UserID">@reply.User.UserName</a>
+                                                <p class="reply-content">@reply.Content</p>
+                                            </li>
+                                        }
+                                    </ul>
+                                    @{Model.Reply.CommentID = comment.CommentID;} 
+                                    <partial model="@Model.Reply" name="_ReplyPartial"></partial>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                }
+            } else {
+                <p class="nocomments-notice">No Comments Yet</p> 
+            }
+        </div>
+    </div>
+</div>

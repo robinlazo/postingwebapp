@@ -1,0 +1,31 @@
+@model PublishDTO
+@{
+    ViewData["Title"] = "Make a post";
+}
+
+@section scripts {
+    <script src="~/lib/jquery/dist/jquery.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation/dist/jquery.validate.min.js" asp-append-version="true"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js" asp-append-version="true"></script>
+}
+
+<div class="publish-container">
+    <form asp-action="Publish" class="publish-form" method="post"> 
+
+        <label class="publish-label">TITLE:</label>
+        <span asp-validation-for="Title"></span>
+        <input asp-for="Title" class="title-input" placeholder="Title (20 characters min 60 max)" />
+
+        <label class="publish-label">DESCRIPTION:</label>
+        <span asp-validation-for="Description"></span>
+        <textarea asp-for="Description" placeholder="Write a description for your post (120 characters min)"
+        class="description-textarea"></textarea>
+
+        <label class="publish-label">CATEGORY:</label>
+        <span asp-validation-for="CategoryID"></span>
+        <select asp-for="CategoryID" class="category-field" 
+        asp-items="@(new SelectList(Model.Categories, "CategoryID", "Name"))"></select>
+        
+        <button class="publish-button">Publish</button>
+    </form>
+</div>

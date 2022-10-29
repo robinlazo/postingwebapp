@@ -1,0 +1,32 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - SocialMedia</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+    <link rel="stylesheet" href="~/css/navbar.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/global.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Account/register.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Account/LogIn.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Account/Info.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Home/Index.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Home/Publish.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/Home/Post.css" asp-append-version="true" />
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <a class="navbar-logo" asp-action="Index" asp-controller="Home">SocialMedia</a>
+            <partial name="_LoginPartial" />
+        </nav>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+    @RenderSection("scripts", false)
+</body>
+</html>

@@ -1,0 +1,50 @@
+﻿@model HomeViewModel
+@{
+    ViewData["Title"] = "Home Page";
+    var copy = @Model.Routes.Clone();
+    var current = @Model.Routes;
+}
+
+<div class="index-container">
+    <nav class="categories">
+        <h3 class="category-header">Categories</h3>
+        <ul class="filter-by-category">
+            @foreach(Category category in Model.Categories) {
+                <li>
+                    @{copy.SetFilterAndDirection(category.CategoryID, current);}
+                    <i title="@category.Description" class="@category.FontAwesomeIcon icon-category"></i>
+                    <a asp-controller="Home" asp-action="Filter" asp-all-route-data="@copy">@category.Name</a>
+                </li>
+            }
+            <li>
+                @{copy.SetFilterAndDirection("all", current);}
+                <a asp-controller="Home" asp-action="Filter"
+                asp-all-route-data="@copy">Mixed</a>
+            </li>
+        </ul>
+    </nav>
+    <div class="posts-container">
+        <div class="newpost-container">
+            <h2 class="newpost-header">Do You want to start a <span class="newpost-header-span">discussion?</span></h2>
+            <a asp-controller="Home" asp-action="Publish" class="makeapost-redirection">Make a post</a>
+        </div>
+        <ul class="index-posts-list">
+            @foreach(Post post in Model.Posts) {
+                <li>
+                    <a asp-action="PostInfo" asp-controller="Home" asp-route-id="@post.PostID" class="post-direction-index" target="blank">@post.Title</a>
+                    <span class="post-category-index">@post.Category.Name</span>
+                    <p class="post-url-description">@post.Description.TrimDescription()</p>
+                    <div class="post-information">
+                        <div class="post-information-container">
+                           <i class="fas fa-user-astronaut astronaut-post-icon"></i>
+                           <span>Posted by: <a asp-action="Info" asp-controller="Account" asp-route-id="@post.UserID" class="post-user-creator">@post.User.UserName</a></span><span class="time-tag-post">@post.Time.TimeElapsed()</span>
+                        </div>
+                        <div class="comments-number-container-index">
+                            <i class="fas fa-comment"></i><span class="comments-in-post">@post.Comments.Count()</span>
+                        </div>
+                    </div>
+                </li>
+            }
+        </ul>  
+    </div>
+</div>
